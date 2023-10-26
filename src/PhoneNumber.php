@@ -24,7 +24,7 @@ abstract class PhoneNumber
             return new InternationalNumber(number: $number);
         }
 
-        $number = preg_replace("/[^0-9x+]/", "", $number);
+        $number = preg_replace('/[^0-9x+]/', '', $number);
         [$preExtensionNumber, $extension] = str_contains($number, 'x') ? explode('x', $number) : [$number, null];
         $matches = [];
         preg_match_all('/\d/', $preExtensionNumber, $matches);
@@ -51,8 +51,6 @@ abstract class PhoneNumber
 
     /**
      * Formats the phone number by combining the country code, formatted phone number, and extension.
-     *
-     * @return string
      */
     public function formatPhoneNumber(): string
     {
@@ -69,8 +67,6 @@ abstract class PhoneNumber
 
     /**
      * Formats the country code.
-     *
-     * @return string|null
      */
     protected function formatCountryCode(): ?string
     {
@@ -86,8 +82,6 @@ abstract class PhoneNumber
 
     /**
      * Formats the extension.
-     *
-     * @return string|null
      */
     protected function formatExtension(): ?string
     {
@@ -96,10 +90,6 @@ abstract class PhoneNumber
 
     /**
      * Normalizes multiple plus signs to a single plus sign.
-     *
-     * @param string $number
-     *
-     * @return string
      */
     protected function normalizePlusSigns(string $number): string
     {

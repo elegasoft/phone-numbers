@@ -14,6 +14,7 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitPhoneNumbers
      */
     public function it_formats_a_ten_digit_numbers_with_parenthesis($tenDigitPhoneNumber): void
@@ -24,6 +25,7 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitPhoneNumbers
      */
     public function it_formats_a_ten_digit_numbers_with_dashes($tenDigitPhoneNumber): void
@@ -34,6 +36,7 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitNumbersWithExtensions
      */
     public function it_formats_a_ten_digit_numbers_with_extensions_and_parenthesis($numberWithExtension): void
@@ -45,6 +48,7 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitNumbersWithExtensions
      */
     public function it_formats_a_ten_digit_numbers_with_extensions_and_dashes($numberWithExtension): void
@@ -56,6 +60,7 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitNumbersWithCountryCodes
      */
     public function it_formats_a_ten_digit_numbers_with_country_codes_and_parenthesis($numberWithCountryCode): void
@@ -67,6 +72,7 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitNumbersWithCountryCodes
      */
     public function it_formats_a_ten_digit_numbers_with_country_codes_and_dashes($numberWithCountryCode): void
@@ -78,11 +84,10 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitNumbersWithCountryCodesAndExtensions
      */
-    public function it_formats_a_ten_digit_numbers_with_country_codes_extensions_and_parenthesis
-    ($numberWithCountryCode):
-    void
+    public function it_formats_a_ten_digit_numbers_with_country_codes_extensions_and_parenthesis($numberWithCountryCode): void
     {
         $phoneNumber = PhoneNumber::make(number: $numberWithCountryCode, areaCodeFormat: AreaCodeFormat::Parenthesis);
         $this->assertInstanceOf(TenDigitNumber::class, $phoneNumber);
@@ -91,14 +96,13 @@ class TenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider tenDigitNumbersWithCountryCodesAndExtensions
      */
-    public function it_formats_a_ten_digit_numbers_with_country_codes_extensions_and_dashes($numberWithCountryCode):
-    void
+    public function it_formats_a_ten_digit_numbers_with_country_codes_extensions_and_dashes($numberWithCountryCode): void
     {
         $phoneNumber = PhoneNumber::make(number: $numberWithCountryCode, areaCodeFormat: AreaCodeFormat::Dashes);
         $this->assertInstanceOf(TenDigitNumber::class, $phoneNumber);
         $this->assertEquals('+1-123-456-7890, ext. 150', (string)$phoneNumber);
     }
-
 }

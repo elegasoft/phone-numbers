@@ -8,9 +8,9 @@ class TenDigitNumber extends PhoneNumber
     {
         return match ($this->areaCodeFormat)
         {
-            AreaCodeFormat::Parenthesis => preg_replace("/(\d{3})(\d{3})(\d{4})/", "($1) $2-$3", $this->number),
-            AreaCodeFormat::Dashes => preg_replace("/(\d{3})(\d{3})(\d{4})/", "$1-$2-$3", $this->number),
-            default => preg_replace("/(\d{3})(\d{3})(\d{4})/", "$1 $2 $3", $this->number),
+            AreaCodeFormat::Parenthesis => preg_replace("/(\d{3})(\d{3})(\d{4})/", '($1) $2-$3', $this->number),
+            AreaCodeFormat::Dashes => preg_replace("/(\d{3})(\d{3})(\d{4})/", '$1-$2-$3', $this->number),
+            default => preg_replace("/(\d{3})(\d{3})(\d{4})/", '$1 $2 $3', $this->number),
         };
     }
 }

@@ -13,6 +13,7 @@ class SevenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider sevenDigitPhoneNumbers
      */
     public function it_formats_a_seven_digit_number_correctly($number)
@@ -24,6 +25,7 @@ class SevenDigitNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider sevenDigitNumbersWithExtensions
      */
     public function it_formats_a_seven_digit_with_extensions($number)

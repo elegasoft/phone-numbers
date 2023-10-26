@@ -13,6 +13,7 @@ class InternationalNumberTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider internationalPhoneNumbers
      */
     public function it_can_format_an_internation_number($number): void
