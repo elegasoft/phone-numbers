@@ -6,7 +6,7 @@
         "phone-numbers"
     ],
     "homepage": "https://github.com/elegasoft/phone-numbers",
-    "license": "private",
+    "license": "The Unlicense",
     "type": "library",
     "authors": [
         {
